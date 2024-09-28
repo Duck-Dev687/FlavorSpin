@@ -1,0 +1,92 @@
+@use 'sass:math';
+@import 'functions';
+@import 'variables';
+@import 'mixins';
+@import 'components/recipe';
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+%flex-center{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+body {
+      font-family: "Happy Monkey", system-ui,Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: $backgroundWhitesmoke;
+      text-align: center;
+    }
+
+    header {
+      background-color: $colorWhite;
+      color: $colorWhite;
+      padding: 20px 0;
+      @extend %flex-center;
+      box-shadow:$boxShadow;
+      img{
+        width: 65px ;
+      }
+      h1{
+        font-size:textSize-comp("big");
+      }
+    }
+
+    h2{
+      margin:3rem 0 1.5rem 0;
+      color:$colorBlack;
+      font-size:textSize-comp("medium");
+
+    }
+
+    .container {
+      padding: 20px;
+      @extend %flex-center;
+      gap: 15px; // Fixed gap
+  max-width: 750px; // Limits the container width on larger screens
+  
+  margin: 0 auto; // Center the container horizontally
+
+      // Flex direction for larger screens
+  @media (min-width: 768px) {
+    flex-direction: row; // Horizontal alignment
+  }
+
+  // Flex direction for smaller screens
+  @media (max-width: 767px) {
+    flex-direction: column; // Vertical alignment
+  }
+}
+
+    
+
+    /* Wheel styles */
+    .wheel {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      box-shadow:0 0 11px rgba(0, 0, 0, 0.1);
+      background: conic-gradient($colorRed 0deg 90deg, $colorYellow 90deg 180deg, $colorGreen
+      180deg 270deg,$colorOrange 270deg 360deg);
+      margin: 20px auto;
+      @extend %flex-center;
+      cursor: pointer;
+      transition: transform 1.5s cubic-bezier(0.33, 0.66, 0.66, 1);
+    }
+
+    .wheel.spinning {
+      animation: spin 2s forwards;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(-720deg); }
+      to { transform: rotate(720deg); }
+    }
+
+    

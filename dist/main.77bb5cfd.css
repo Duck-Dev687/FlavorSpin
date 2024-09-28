@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap");
+.recipe-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 12px auto;
+  padding: 20px;
+  width: 300px;
+  display: none; /* Hide by default */
+}
+.recipe-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+.recipe-item a {
+  color: #212020;
+  text-decoration: none;
+  border-bottom: 3px #81C784 solid;
+}
+.recipe-item a:hover {
+  color: rgb(132.5307692308, 200.5692307692, 135.4467032967);
+  color: #c781c4;
+}
+@media (max-width: 767px) {
+  .recipe-item {
+    margin: 0;
+  }
+}
+
+.wheel, .container, header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Happy Monkey", system-ui, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+header {
+  background-color: #fff;
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+header img {
+  width: 65px;
+}
+header h1 {
+  font-size: calc(1.5rem + 2vw);
+}
+
+h2 {
+  margin: 3rem 0 1.5rem 0;
+  color: #212020;
+  font-size: calc(1rem + 1.5vw);
+}
+
+.container {
+  padding: 20px;
+  gap: 15px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/* Wheel styles */
+.wheel {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.1);
+  background: conic-gradient(#FF6F61 0deg 90deg, #FFD54F 90deg 180deg, #81C784 180deg 270deg, #FFB74D 270deg 360deg);
+  margin: 20px auto;
+  cursor: pointer;
+  transition: transform 1.5s cubic-bezier(0.33, 0.66, 0.66, 1);
+}
+
+.wheel.spinning {
+  animation: spin 2s forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-720deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+/*# sourceMappingURL=/main.77bb5cfd.css.map */

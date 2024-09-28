@@ -1,0 +1,25 @@
+
+.recipe-item {
+    background-color: $colorWhite;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    margin: 12px auto;
+    padding: 20px;
+    width: 300px;
+    display: none; /* Hide by default */
+    
+    
+    img {
+        width: 100%;
+        border-radius: $borderRadius;
+      }
+
+      a{
+        @include fancy-anchor;
+      }
+
+      @media (max-width: 767px) {
+        margin: 0; // Remove the auto margin on smaller screens
+      }
+}
+

@@ -1,0 +1,9 @@
+@mixin fancy-anchor($color:$colorBlack, $hoverColor:$colorGreen) {
+    color:$color;
+    text-decoration:none;
+    border-bottom:3px $hoverColor solid;
+    &:hover{
+      color:lighten($hoverColor, 1); color:complement($hoverColor);
+    }
+  
+  }

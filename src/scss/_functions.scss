@@ -1,0 +1,15 @@
+@function textSize-comp($size) {
+    @if $size == 'big' {
+        @return calc(1.5rem + 2vw);
+    } @else if $size == 'medium' {
+        @return calc(1rem + 1.5vw);
+    } @else if $size == 'small' {
+        @return calc(1rem + 1vw);
+
+    } @else {
+        @warn "Invalid size: #{$size}. Use 'big', 'medium', or 'small'.";
+        @return null; // Return null for invalid sizes
+    }
+}
+
+@debug math.abs(8.102)
